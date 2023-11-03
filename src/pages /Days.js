@@ -16,7 +16,7 @@ const Days = (props) => {
        <div className="dailylogs">
         {dailyLogs.map((days) => {
             const { day, symbol } = days;
-
+            // Displays the the name of the weeks and shows the symbols in the browswer as a route params
             return (
                 <Link to={`/days/${symbol}`} >
                     <h2>{day}</h2>
