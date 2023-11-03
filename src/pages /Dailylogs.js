@@ -1,47 +1,17 @@
-// This page will all the days of the week
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react"
 
+// Dailylogs = index 
 const Dailylogs = (props) => {
-// Create an array of days 
-  const dailyLogs = [
-    "Sunday", 
-    "Monday", 
-    "Tuesday", 
-    "Wednesday", 
-    "Thursday", 
-    "Friday", 
-    "Saturday", 
-  ];
 
-// return will render an individual index from array above
-return (
-  <div className="dailylogs">
-    <div>
-      <h1 className="only">Choose a day</h1>
-    </div>
-    <Link to='/sunday'>
-      <h2>{dailyLogs[0]}</h2>
-    </Link>
-    <Link to='/monday'>
-      <h2>{dailyLogs[1]}</h2>
-    </Link>
-    <Link to='/tuesday'>
-      <h2>{dailyLogs[2]}</h2>
-    </Link>
-    <Link to='/wednesday'>
-      <h2>{dailyLogs[3]}</h2>
-    </Link>
-    <Link to='/thursday'>
-      <h2>{dailyLogs[4]}</h2>
-    </Link>
-    <Link to='/friday'>
-      <h2>{dailyLogs[5]}</h2>
-    </Link>
-    <Link to='/saturday'>
-      <h2>{dailyLogs[6]}</h2>
-    </Link>
-  </div>
+// return will iterate through each individual index from array above
+return ( 
+       <div className="dailylogs">
+            <Link>
+              {/* <h2>{dailyLogs}</h2> */}
+            </Link>
+          </div>  
   );
 };
 

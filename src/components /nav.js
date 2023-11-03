@@ -1,4 +1,3 @@
-// Links will be add to access CRUD functions in this component
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -8,9 +7,9 @@ const Nav = (props) => {
       <Link to="/">
         <div>Daily Logs</div>
       </Link>
-      <Link to="/create">
+      {/* <Link to="/create">
         <div>Create A Messages</div>
-      </Link>
+      </Link> */}
     </div>
   );
 };
