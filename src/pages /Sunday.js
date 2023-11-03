@@ -2,7 +2,13 @@
 import React from "react";
 
 const Sunday = (props) => {
-  return <h1 className="messages">This is the Positivemessagess Component</h1>;
+  <h1>Happy Sunday</h1>
+
+  return (
+
+    <img className="img" src="https://blog.gratefulness.me/content/images/2022/12/sunday-quotes1.jpg" />
+  )
+  
 };
 
 export default Sunday;

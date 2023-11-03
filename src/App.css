@@ -18,5 +18,17 @@
   text-align: center;
   text-decoration: none;
   font-size: xx-large;
-  color: brown;
+}
+
+.only {
+  color: rgb(221, 151, 29);
+}
+
+.img {
+  size: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 50%;
 }

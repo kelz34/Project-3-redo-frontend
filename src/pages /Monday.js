@@ -2,7 +2,12 @@
 import React from "react";
 
 const Monday = (props) => {
-  return <h1 className="messages">This is the Positivemessagess Component</h1>;
+  <h1>Happy Sunday</h1>
+
+  return (
+
+    <img className="img" src="https://www.rd.com/wp-content/uploads/2021/08/motivation-quote-1.jpg" />
+  )
 };
 
 export default Monday;

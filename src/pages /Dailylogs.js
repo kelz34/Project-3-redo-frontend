@@ -14,9 +14,12 @@ const Dailylogs = (props) => {
     "Saturday", 
   ];
 
-// return will iterate over each day
+// return will render an individual index from array above
 return (
   <div className="dailylogs">
+    <div>
+      <h1 className="only">Choose a day</h1>
+    </div>
     <Link to='/sunday'>
       <h2>{dailyLogs[0]}</h2>
     </Link>

@@ -2,7 +2,12 @@
 import React from "react";
 
 const Thursday = (props) => {
-  return <h1 className="messages">This is the Positivemessagess Component</h1>;
+  <h1>Happy Sunday</h1>
+
+  return (
+
+    <img className="img" src="https://www.ourmindfullife.com/wp-content/uploads/2021/07/Thursday-quotes-5.jpg" />
+  )
 };
 
 export default Thursday;
