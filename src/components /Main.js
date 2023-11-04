@@ -27,6 +27,27 @@ const Main = (props) => {
     getQuotes();
   }
 
+  const updateQuotes = async (quote, id) => {
+    // make post request to create quote
+    await fetch(URL + id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote)
+    })
+    // update list of quotes
+    getQuotes()
+  }
+
+  const deleteQuotes = async (id) => {
+    // make post request to delete quotes
+    await fetch(URL + id, {
+      method: "delete",
+    })
+    // update list of quotes
+    getQuotes()
+  }
 
   useEffect(() => {
     getQuotes()
@@ -34,11 +55,19 @@ const Main = (props) => {
 
   return (
     <div className="Main">
-       
+    <Main>
       <Routes>
-        <Route path="/" element={<Dailylogs/>}/>
-        <Route path="/days/:id" element={<Show/>}/>
+        <Route path="/" element={
+          <Dailylogs   
+          />
+        }/>
+        <Route path="/days/:id" element={
+          <Show
+          />
+        }/>
       </Routes>
+    </Main>
+      
     </div>
   );
 }

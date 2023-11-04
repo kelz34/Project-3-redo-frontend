@@ -66,7 +66,7 @@ const Dailylogs = (props) => {
         />
         <input type="submit" value="Create Comment" />
       </form>
-      
+      {/* {props.quotes ? loaded() : loading()} */}
     </section>
   )
 };
