@@ -7,8 +7,9 @@ const Dailylogs = (props) => {
 // three functions will be assigned 1 for the function of the component, 1 for loaded and 1 for loading
 
   const [newForm, setNewForm] = useState({
-    day: "",
-    symbol: "",
+    name: "",
+    date: "",
+    comment: "",
   })
 
   
@@ -23,8 +24,9 @@ const Dailylogs = (props) => {
     event.preventDefault()
     props.createQuotes(newForm)
     setNewForm({
-      day: "",
-      symbol: "",
+      name: "",
+      date: "",
+      comment: "",
     })
   }
 
@@ -37,6 +39,36 @@ const Dailylogs = (props) => {
   const loading = () => {
     return <h1>Loading...</h1>
   }
+  // returning submission form
+  return (
+    <section>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={newForm.name}
+          name="name"
+          placeholder="name"
+          onChange={handleChange}
+        />
+        <input 
+          type="text"
+          value={newForm.date} 
+          name="date"
+          placeholder="date"
+          onChange={handleChange}
+        />
+        <input  
+          type="text"
+          value={newForm.img}
+          name="comment"
+          placeholder="comment"
+          onChange={handleChange}
+        />
+        <input type="submit" value="Create Comment" />
+      </form>
+      
+    </section>
+  )
 };
 
 
