@@ -34,7 +34,7 @@ const Dailylogs = (props) => {
   const loaded = () => {
     return props.notes.map((note) => (
       <div key={note._id} className="note">
-        
+        <Link to={`/notes/${note._id}`} ><h1>{note.title}</h1></Link>
       </div>
     ))
   }
@@ -70,7 +70,7 @@ const Dailylogs = (props) => {
         />
         <input type="submit" value="Create Comment" />
       </form>
-      {/* {props.quotes ? loaded() : loading()} */}
+      {props.quotes ? loaded() : loading()}
     </section>
   )
 };
