@@ -1,10 +1,10 @@
 import './App.css';
 import Main from './components /Main';
 import Nav from './components /nav';
-import Dailylogs from './pages /Dailylogs';
+import Dailylogs from './pages /Dailylogs'
 // import Days from './pages /Days';
 
-const App = (props) => {
+const App = () => {
   // display the quotes
   
   return (

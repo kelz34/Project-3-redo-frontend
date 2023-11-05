@@ -15,7 +15,10 @@ const Dailylogs = (props) => {
   
   // handleChange function for form
   const handleChange = (event) => {
-    setNewForm({ ...newForm, [event.target.day]: event.target.value })
+    setNewForm(prev => ({ 
+      ...prev, 
+      [event.target.day]: event.target.value 
+    }))
   }
 
 

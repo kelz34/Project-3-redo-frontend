@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Nav = (props) => {
   return (
-    <nav className="nav">
+    <div className="nav">
       <Link to="/">
         <div>Daily Logs</div>
       </Link>
-    </nav>
+    </div>
   );
 };
 

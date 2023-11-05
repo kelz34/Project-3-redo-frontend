@@ -7,7 +7,7 @@ const Main = (props) => {
   // display the quotes
   const [notes, setNotes] = useState(null);
   // calling API from backend
-  const URL = "http://localhost:4000/notes/";
+  const URL = "https://thawing-brushlands-81862-dd69e79146b3.herokuapp.com/notes";
 
   const getNotes = async () => {
     const response = await fetch(URL)
@@ -55,7 +55,6 @@ const Main = (props) => {
 
   return (
     <div className="Main">
-    <Main>
       <Routes>
         <Route path="/" element={ 
           <Dailylogs notes={notes} 
@@ -70,7 +69,6 @@ const Main = (props) => {
           />
         }/>
       </Routes>
-    </Main>
       
     </div>
   );
