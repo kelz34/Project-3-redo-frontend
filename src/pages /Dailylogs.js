@@ -7,9 +7,9 @@ const Dailylogs = (props) => {
 // three functions will be assigned 1 for the function of the component, 1 for loaded and 1 for loading
 
   const [newForm, setNewForm] = useState({
-    name: "",
+    title: "",
+    content: "",
     date: "",
-    comment: "",
   })
 
   
@@ -24,15 +24,19 @@ const Dailylogs = (props) => {
     event.preventDefault()
     props.createQuotes(newForm)
     setNewForm({
-      name: "",
+      title: "",
+      content: "",
       date: "",
-      comment: "",
     })
   }
 
 
   const loaded = () => {
-
+    return props.notes.map((note) => (
+      <div key={note._id} className="note">
+        
+      </div>
+    ))
   }
 
 

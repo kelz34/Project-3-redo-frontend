@@ -5,63 +5,63 @@ import Show from "../pages /Show";
 
 const Main = (props) => {
   // display the quotes
-  const [quotes, setQuotes] = useState(null);
+  const [notes, setNotes] = useState(null);
   // calling API from backend
-  const URL = "";
+  const URL = "http://localhost:4000/notes/";
 
-  const getQuotes = async () => {
+  const getNotes = async () => {
     const response = await fetch(URL)
     const data = await response.json()
-    setQuotes(data)
+    setNotes(data)
   };
 
-  const createQuotes = async (quote) => {
+  const createNotes = async (note) => {
     // make a request to create a quote
     await fetch(URL, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(quote),
+      body: JSON.stringify(note),
     });
-    getQuotes();
+    getNotes();
   }
 
-  const updateQuotes = async (quote, id) => {
+  const updateNotes = async (note, id) => {
     // make post request to create quote
     await fetch(URL + id, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(quote)
+      body: JSON.stringify(note)
     })
     // update list of quotes
-    getQuotes()
+    getNotes()
   }
 
-  const deleteQuotes = async (id) => {
+  const deleteNotes = async (id) => {
     // make post request to delete quotes
     await fetch(URL + id, {
       method: "delete",
     })
     // update list of quotes
-    getQuotes()
+    getNotes()
   }
 
   useEffect(() => {
-    getQuotes()
+    getNotes()
   }, [])
 
   return (
     <div className="Main">
     <Main>
       <Routes>
-        <Route path="/" element={
-          <Dailylogs   
+        <Route path="/" element={ 
+          <Dailylogs notes={notes} createNotes={createNotes}
           />
         }/>
-        <Route path="/days/:id" element={
+        <Route path="/notes/:id" element={
           <Show
           />
         }/>
