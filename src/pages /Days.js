@@ -18,7 +18,7 @@ const Days = (props) => {
             const { day, symbol } = days;
             // Displays the the name of the weeks and shows the symbols in the browswer as a route params
             return (
-                <Link to={`/days/${symbol}`} >
+                <Link to={`/notes/${symbol}`} >
                     <h2>{day}</h2>
                 </Link>
             )

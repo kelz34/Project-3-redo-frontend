@@ -22,7 +22,7 @@ const Dailylogs = (props) => {
   // handle submit function for form
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.createQuotes(newForm)
+    props.createNotes(newForm)
     setNewForm({
       title: "",
       content: "",
@@ -30,7 +30,7 @@ const Dailylogs = (props) => {
     })
   }
 
-
+  // loaded function
   const loaded = () => {
     return props.notes.map((note) => (
       <div key={note._id} className="note">
@@ -49,28 +49,28 @@ const Dailylogs = (props) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={newForm.name}
-          name="name"
-          placeholder="name"
+          value={newForm.title}
+          name="title"
+          placeholder="title"
           onChange={handleChange}
         />
         <input 
           type="text"
-          value={newForm.date} 
-          name="date"
-          placeholder="date"
+          value={newForm.content} 
+          name="content"
+          placeholder="content"
           onChange={handleChange}
         />
         <input  
           type="text"
-          value={newForm.img}
-          name="comment"
-          placeholder="comment"
+          value={newForm.date}
+          name="date"
+          placeholder="date"
           onChange={handleChange}
         />
         <input type="submit" value="Create Comment" />
       </form>
-      {props.quotes ? loaded() : loading()}
+      {props.notes ? loaded() : loading()}
     </section>
   )
 };

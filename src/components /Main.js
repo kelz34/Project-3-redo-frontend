@@ -58,11 +58,15 @@ const Main = (props) => {
     <Main>
       <Routes>
         <Route path="/" element={ 
-          <Dailylogs notes={notes} createNotes={createNotes}
+          <Dailylogs notes={notes} 
+          createNotes={createNotes}
           />
         }/>
         <Route path="/notes/:id" element={
           <Show
+          notes={notes}
+          updateNotes={updateNotes}
+          deleteNotes={deleteNotes}
           />
         }/>
       </Routes>
