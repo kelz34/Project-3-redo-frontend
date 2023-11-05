@@ -1,5 +1,13 @@
 const Show = (props) => {
-    return <h1>Component Name</h1>;
+
+
+    return (
+      <div>
+          <h1>Component Name</h1>;
+          <h1>Component Name</h1>;
+          <h1>Component Name</h1>;
+      </div>
+    )
   }
   
   export default Show;
