@@ -57,7 +57,8 @@ const Main = (props) => {
     <div className="Main">
       <Routes>
         <Route path="/" element={ 
-          <Dailylogs notes={notes} 
+          <Dailylogs 
+          notes={notes} 
           createNotes={createNotes}
           />
         }/>

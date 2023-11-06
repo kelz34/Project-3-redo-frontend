@@ -15,10 +15,12 @@ const Dailylogs = (props) => {
   
   // handleChange function for form
   const handleChange = (event) => {
-    setNewForm(prev => ({ 
-      ...prev, 
-      [event.target.day]: event.target.value 
-    }))
+    setNewForm
+    ({ ...newForm, [event.target.name]: event.target.value })
+    // (prev => ({ 
+    //   ...prev, 
+    //   [event.target.title]: event.target.value 
+    // }))
   }
 
 
@@ -35,11 +37,15 @@ const Dailylogs = (props) => {
 
   // loaded function
   const loaded = () => {
-    return props.notes.map((note) => (
-      <div key={note._id} className="note">
-        <Link to={`/notes/${note._id}`} ><h1>{note.title}</h1></Link>
+    return props.notes.map((note) => {
+      return(
+       <div key={note._id} className="note">
+        <Link to={`/notes/${note._id}`} >
+          <h1>{note.title}</h1>
+        </Link>
       </div>
-    ))
+      )
+    })
   }
 
 
