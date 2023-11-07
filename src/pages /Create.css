@@ -1,0 +1,37 @@
+.create-note-container {
+    background-color: #ffeb80;
+    border: 2px solid #ffdb4d;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px #888888;
+  }
+  
+  .create-note-container input
+   {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .create-note-container button {
+    background-color: #ffeb80;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .create-note-container button:hover {
+    text-decoration: underline;
+    
+  }
+  .create-note-container textarea{
+    width: 60%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+  }

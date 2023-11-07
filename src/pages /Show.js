@@ -1,64 +1,71 @@
-import { useParams, useNavigate } from "react-router-dom"
-import { useState } from "react"
- 
-const Show = (props) => {
-  const params = useParams()
-  const navigate = useNavigate()
-  const id = params.id
-  const notes = props.notes
-  const note = notes.find((n) => n._id === id)
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-  const [editForm, setEditForm] = useState(note)
+function Show(props) {
+  const params = useParams();
+  const navigate = useNavigate();
 
-  // this function handles change that occurs in the edit form
+  // Define state for the form data and initialize it with the note's details
+  const [updateForm, setUpdateForm] = useState({
+    title: props.note.title,
+    content: props.note.content,
+    date: props.note.date,
+  });
+
+  // Handle form input changes
   const handleChange = (event) => {
-    setEditForm({ ...editForm, [event.target.name]: event.target.value })
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    props.updateNotes(editForm);
-    navigate("/")
+    setUpdateForm((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
   };
 
-  const removeNote = () => {
-    props.deleteNotes(notes._id)
-    navigate("/")
+  // Handle form submission to update the note
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.updateNotes(updateForm, params.id);
+  };
+
+  // Handle the delete action
+  const handleDelete = () => {
+    props.deleteNotes(params.id);
+    navigate('/notes'); // Redirect to the home page after deletion
   };
 
   return (
     <div className="note">
-      <h1>{note.title}</h1>
-      <h2>{note.content}</h2>
-      <button id="delete" onClick={removeNote}>
-        DELETE
+      <h1>{props.note.title}</h1>
+      <h2>{props.note.date}</h2>
+      <p>"{props.note.content}"</p>
+      <button onClick={handleDelete} id="delete">
+        DELETE NOTE
       </button>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={editForm.title}
+          value={updateForm.title}
           name="title"
-          placeholder="title"
+          placeholder="Title"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={editForm.content}
+          value={updateForm.content}
           name="content"
-          placeholder="content"
+          placeholder="Content"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={editForm.date}
+          value={updateForm.date}
           name="date"
-          placeholder="date"
+          placeholder="Date"
           onChange={handleChange}
         />
         <input type="submit" value="Update Note" />
       </form>
     </div>
-  )
+  );
 }
-export default Show
 
+export default Show;

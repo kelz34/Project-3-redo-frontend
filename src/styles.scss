@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f5e6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: #555;
+  }
+  
+  h3 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  section {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888888;
+  }
+  
+  .note {
+    background-color: #ffeb80;
+    border: 2px solid #ffdb4d;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px #888888;
+  }
+  
+  .note button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .note button:hover {
+    text-decoration: underline;
+  }
+   .spacer{
+    margin: 5px;
+  }
