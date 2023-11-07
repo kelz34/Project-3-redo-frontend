@@ -27,11 +27,11 @@ const Dailylogs = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.createNotes(newForm)
-    // setNewForm({
-    //   title: "",
-    //   content: "",
-    //   date: "",
-    // })
+    setNewForm({
+      title: "",
+      content: "",
+      date: "",
+    })
   }
 
   // loaded function

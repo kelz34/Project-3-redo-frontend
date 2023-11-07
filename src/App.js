@@ -11,8 +11,6 @@ const App = () => {
     <div className="App">
 
        <Nav />      
-       {/* <Days />  */}
-       <Dailylogs />
        <Main />
     </div>
   );

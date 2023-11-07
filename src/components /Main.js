@@ -53,7 +53,7 @@ const Main = (props) => {
   const deleteNotes = async (id) => {
     // make post request to delete quotes
     await fetch(URL + id, {
-      method: "delete",
+      method: "delete"
     })
     // update list of quotes
     getNotes()
@@ -77,7 +77,7 @@ const Main = (props) => {
         <Route path="/notes/:id" 
         element={
           <Show
-          note={note}
+          notes={notes}
           updateNotes={updateNotes}
           deleteNotes={deleteNotes}
           />
