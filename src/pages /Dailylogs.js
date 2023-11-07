@@ -15,8 +15,7 @@ const Dailylogs = (props) => {
   
   // handleChange function for form
   const handleChange = (event) => {
-    setNewForm
-    ({ ...newForm, [event.target.name]: event.target.value })
+    setNewForm({ ...newForm, [event.target.name]: event.target.value })
     // (prev => ({ 
     //   ...prev, 
     //   [event.target.title]: event.target.value 
@@ -28,11 +27,11 @@ const Dailylogs = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.createNotes(newForm)
-    setNewForm({
-      title: "",
-      content: "",
-      date: "",
-    })
+    // setNewForm({
+    //   title: "",
+    //   content: "",
+    //   date: "",
+    // })
   }
 
   // loaded function

@@ -6,8 +6,16 @@ import Show from "../pages /Show";
 const Main = (props) => {
   // display the quotes
   const [notes, setNotes] = useState(null);
+  const [note, setNote] = useState(undefined)
+
   // calling API from backend
   const URL = "https://thawing-brushlands-81862-dd69e79146b3.herokuapp.com/notes";
+
+  const findNote = (id) => {
+    setNote(notes.find((p) => {
+      return p._id === id
+    }))
+  }
 
   const getNotes = async () => {
     const response = await fetch(URL)
@@ -16,15 +24,16 @@ const Main = (props) => {
   };
 
   const createNotes = async (note) => {
-    // make a request to create a quote
-    await fetch(URL, {
+    // make a request to create a note
+    const response = await fetch(URL, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(note),
     });
-    getNotes();
+    const createdNote = await response.json()
+    setNotes((prev) => [...prev, createdNote]);
   }
 
   const updateNotes = async (note, id) => {
@@ -37,7 +46,8 @@ const Main = (props) => {
       body: JSON.stringify(note)
     })
     // update list of quotes
-    getNotes()
+   await getNotes()
+   findNote(id)
   }
 
   const deleteNotes = async (id) => {
@@ -56,15 +66,18 @@ const Main = (props) => {
   return (
     <div className="Main">
       <Routes>
-        <Route path="/" element={ 
+        <Route path="/" 
+        element={ 
           <Dailylogs 
           notes={notes} 
           createNotes={createNotes}
+          findNote={findNote}
           />
         }/>
-        <Route path="/notes/:id" element={
+        <Route path="/notes/:id" 
+        element={
           <Show
-          notes={notes}
+          note={note}
           updateNotes={updateNotes}
           deleteNotes={deleteNotes}
           />
