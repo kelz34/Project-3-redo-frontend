@@ -1,5 +1,5 @@
 Deployment:
-- Netlify(Frontend): 
+- Netlify(Frontend): https://melodic-salamander-9cfa34.netlify.app/
 - Heroku(Backend): https://thawing-brushlands-81862-dd69e79146b3.herokuapp.com/notes
 
 Link to the code here :
